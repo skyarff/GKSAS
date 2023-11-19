@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
@@ -16,12 +15,14 @@ namespace KP_0_
             InitializeComponent();
         }
 
+
         internal static Dictionary<string, DataGridView> dataGridViews;
         internal static Dictionary<string, BindingNavigator> bindingNavigators;
 
 
         private void TablesForm_Load(object sender, EventArgs e)
         {
+            tabControl1.SelectedIndex = Tools.tabPageIndexOfTables;
 
 
             dataGridViews = new Dictionary<string, DataGridView>
@@ -33,6 +34,7 @@ namespace KP_0_
                 ["Purchase"] = dataGridView5,
                 ["Appeal"] = dataGridView6,
                 ["LinkKeyPurchase"] = dataGridView8,
+                ["ViewKeyProduct"] = dataGridView7,
             };
             bindingNavigators = new Dictionary<string, BindingNavigator>
             {
@@ -47,30 +49,24 @@ namespace KP_0_
             };
 
 
-            MainForm.dataSet = new DataSet();
             foreach (var item in dataGridViews.Keys)
             {
-                MainForm.sqlDataAdapters[item].Fill(MainForm.dataSet, item);
 
-                MainForm.bindingSources[item].DataSource = MainForm.dataSet;
-                MainForm.bindingSources[item].DataMember = item;
-
-
+                dataGridViews[item].DataError += YourDataGridView_DataError;
                 dataGridViews[item].DataSource = MainForm.bindingSources[item];
-                bindingNavigators[item].BindingSource = MainForm.bindingSources[item];
+
+                if (bindingNavigators.ContainsKey(item))
+                    bindingNavigators[item].BindingSource = MainForm.bindingSources[item];
 
                 if (item != "Client")
-                {
                     dataGridViews[item].Columns[0].ReadOnly = true;
-                }
+
                 dataGridViews[item].AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
 
-
-
         }
 
-
+        private void YourDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e) { }
         private DataTable AmongSearch(DataTable dataTable, Type type, string table, string column, string p1 = "", string p2 = "")
         {
 
@@ -158,6 +154,10 @@ namespace KP_0_
             this.Close();
 
             (new Thread(() => tablesForm.ShowDialog())).Start();
+        }
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Tools.tabPageIndexOfTables = tabControl1.SelectedIndex;
         }
 
 
@@ -326,8 +326,22 @@ namespace KP_0_
                     textBox46.Text,
                     textBox45.Text);
         }
+
         #endregion
 
+
+        //ViewKeyProduct
+        #region
+        private void textBox19_TextChanged(object sender, EventArgs e)
+        {
+            OccurrenceSearch(textBox19.Text, "ViewKeyProduct", "IdOfKey", dataGridView7);
+        }
+        private void textBox20_TextChanged(object sender, EventArgs e)
+        {
+            OccurrenceSearch(textBox20.Text, "ViewKeyProduct", "IdOfDelivery", dataGridView7);
+        }
+
+        #endregion
 
     }
 }

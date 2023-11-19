@@ -135,6 +135,7 @@
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -156,6 +157,8 @@
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -179,6 +182,8 @@
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
             this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
@@ -201,12 +206,13 @@
             this.toolStripButton42 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
-            this.label13 = new System.Windows.Forms.Label();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox20 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -238,6 +244,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator8)).BeginInit();
             this.bindingNavigator8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -306,12 +314,14 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1041, 469);
             this.tabControl1.TabIndex = 3;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -1235,6 +1245,15 @@
             this.tabPage5.Text = "Заказ";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(129, 366);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(26, 13);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Mail";
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(590, 389);
@@ -1437,6 +1456,23 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Обращение";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(114, 405);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(41, 13);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Статус";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(161, 402);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(329, 20);
+            this.textBox13.TabIndex = 30;
+            this.textBox13.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             // 
             // button7
             // 
@@ -1659,6 +1695,23 @@
             this.tabPage8.Text = "Связь ключ заказ";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(298, 366);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(55, 13);
+            this.label19.TabIndex = 31;
+            this.label19.Text = "Id заказа";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(359, 363);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(131, 20);
+            this.textBox14.TabIndex = 30;
+            this.textBox14.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
+            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(590, 415);
@@ -1856,14 +1909,45 @@
             this.dataGridView8.Size = new System.Drawing.Size(1033, 308);
             this.dataGridView8.TabIndex = 15;
             // 
-            // label13
+            // tabPage7
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(129, 366);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(26, 13);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "Mail";
+            this.tabPage7.Controls.Add(this.label21);
+            this.tabPage7.Controls.Add(this.textBox20);
+            this.tabPage7.Controls.Add(this.label20);
+            this.tabPage7.Controls.Add(this.textBox19);
+            this.tabPage7.Controls.Add(this.dataGridView7);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(1033, 443);
+            this.tabPage7.TabIndex = 8;
+            this.tabPage7.Text = "Представление Ключ - Продукт";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(105, 366);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(50, 13);
+            this.label20.TabIndex = 43;
+            this.label20.Text = "Id ключа";
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(161, 363);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(275, 20);
+            this.textBox19.TabIndex = 42;
+            this.textBox19.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
+            // 
+            // dataGridView7
+            // 
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView7.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.Size = new System.Drawing.Size(1033, 308);
+            this.dataGridView7.TabIndex = 32;
             // 
             // button5
             // 
@@ -1875,39 +1959,22 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // label14
+            // label21
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(114, 405);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 13);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "Статус";
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(89, 392);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(66, 13);
+            this.label21.TabIndex = 45;
+            this.label21.Text = "Id доставки";
             // 
-            // textBox13
+            // textBox20
             // 
-            this.textBox13.Location = new System.Drawing.Point(161, 402);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(329, 20);
-            this.textBox13.TabIndex = 30;
-            this.textBox13.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(359, 363);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(131, 20);
-            this.textBox14.TabIndex = 30;
-            this.textBox14.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(298, 366);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(55, 13);
-            this.label19.TabIndex = 31;
-            this.label19.Text = "Id заказа";
+            this.textBox20.Location = new System.Drawing.Point(161, 389);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(275, 20);
+            this.textBox20.TabIndex = 44;
+            this.textBox20.TextChanged += new System.EventHandler(this.textBox20_TextChanged);
             // 
             // TablesForm
             // 
@@ -1922,6 +1989,7 @@
             this.MinimizeBox = false;
             this.Name = "TablesForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TablesForm";
             this.Load += new System.EventHandler(this.TablesForm_Load);
             this.contextMenuStrip2.ResumeLayout(false);
@@ -1969,6 +2037,9 @@
             this.bindingNavigator8.ResumeLayout(false);
             this.bindingNavigator8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2152,5 +2223,11 @@
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.DataGridView dataGridView7;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBox20;
     }
 }

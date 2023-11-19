@@ -15,37 +15,25 @@ namespace KP_0_
             InitializeComponent();
         }
 
-        internal static SqlConnection sqlConnection = null;
-        internal static string connectionString = "Data Source=DESKTOP-KOFNV9U\\FIRSTSERVER;Initial Catalog=GKSAS;Integrated Security=True";
 
-        internal static Dictionary<string, SqlDataAdapter> sqlDataAdapters = new Dictionary<string, SqlDataAdapter>()
+
+
+        internal static SqlConnection sqlConnection = null;
+        internal static List<string> tableNames = new List<string>()
         {
-            ["Appeal"] = new SqlDataAdapter("SELECT * FROM Appeal", MainForm.connectionString),
-            ["Client"] = new SqlDataAdapter("SELECT * FROM Client", MainForm.connectionString),
-            ["Delivery"] = new SqlDataAdapter("SELECT * FROM Delivery", MainForm.connectionString),
-            ["DigitalProduct"] = new SqlDataAdapter("SELECT * FROM DigitalProduct", MainForm.connectionString),
-            ["Image"] = new SqlDataAdapter("SELECT * FROM Image", MainForm.connectionString),
-            ["KeyForSale"] = new SqlDataAdapter("SELECT * FROM KeyForSale", MainForm.connectionString),
-            ["LinkKeyPurchase"] = new SqlDataAdapter("SELECT * FROM LinkKeyPurchase", MainForm.connectionString),
-            ["PlatformOfKeys"] = new SqlDataAdapter("SELECT * FROM PlatformOfKeys", MainForm.connectionString),
-            ["Provider"] = new SqlDataAdapter("SELECT * FROM Provider", MainForm.connectionString),
-            ["Purchase"] = new SqlDataAdapter("SELECT * FROM Purchase", MainForm.connectionString),
-            ["Staff"] = new SqlDataAdapter("SELECT * FROM Staff", MainForm.connectionString),
+            "Appeal",
+            "Client",
+            "Delivery",
+            "DigitalProduct",
+            "Image",
+            "KeyForSale",
+            "LinkKeyPurchase",
+            "Purchase",
+            "Staff",
+            "ViewKeyProduct"
         };
-        internal static Dictionary<string, BindingSource> bindingSources = new Dictionary<string, BindingSource>()
-        {
-            ["Appeal"] = new BindingSource(),
-            ["Client"] = new BindingSource(),
-            ["Delivery"] = new BindingSource(),
-            ["DigitalProduct"] = new BindingSource(),
-            ["Image"] = new BindingSource(),
-            ["KeyForSale"] = new BindingSource(),
-            ["LinkKeyPurchase"] = new BindingSource(),
-            ["PlatformOfKeys"] = new BindingSource(),
-            ["Provider"] = new BindingSource(),
-            ["Purchase"] = new BindingSource(),
-            ["Staff"] = new BindingSource(),
-        };
+        internal static Dictionary<string, SqlDataAdapter> sqlDataAdapters = new Dictionary<string, SqlDataAdapter>();
+        internal static Dictionary<string, BindingSource> bindingSources = new Dictionary<string, BindingSource>();
         internal static DataSet dataSet;
 
 
@@ -56,12 +44,10 @@ namespace KP_0_
             for (int i = 0; i < Tools.configValues.Length; i++) Tools.ConfigRead(i.ToString());
 
 
-            
-
             textBox1.Text = Tools.configValues[0];
             textBox2.ReadOnly = true;
 
-           
+
             try
             {
                 sqlConnection = new SqlConnection(Tools.configValues[0]);
@@ -72,14 +58,49 @@ namespace KP_0_
                 {
                     textBox2.Text = "Соединение было успешно установлено.";
                 }
-
-
             }
             catch
             {
                 menuStrip1.Enabled = false;
                 textBox2.Text = "Ошибка, не удалось установить соединение.";
             }
+
+
+
+            if (menuStrip1.Enabled)
+            {
+                for (int i = 0; i < tableNames.Count; i++)
+                {
+                    sqlDataAdapters.Add(tableNames[i],
+                        new SqlDataAdapter($"SELECT * FROM {tableNames[i]}", Tools.configValues[0]));
+
+                    bindingSources.Add(tableNames[i],
+                        new BindingSource());
+                }
+
+
+                MainForm.dataSet = new DataSet();
+                for (int i = 0; i < tableNames.Count; i++)
+                {
+                    MainForm.sqlDataAdapters[tableNames[i]].Fill(MainForm.dataSet, tableNames[i]);
+                    MainForm.bindingSources[tableNames[i]].DataSource = MainForm.dataSet;
+                    MainForm.bindingSources[tableNames[i]].DataMember = tableNames[i];
+                }
+            }
+
+
+
+
+
+
+            
+
+
+
+
+
+
+           
 
 
 

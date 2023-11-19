@@ -5,6 +5,10 @@ namespace KP_0_
 {
     internal class Tools
     {
+        internal static int tabPageIndexOfTables = 0;
+        internal static int tabPageIndexOfQueries = 0;
+
+
         internal static string[] configValues =
         {
             "Data Source=SERVER;Initial Catalog=DATABASE;Integrated Security=True",

@@ -1,0 +1,151 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE Client (                   
+	Mail nvarchar(255) CHECK (Mail LIKE '%_@__%.__%' 
+    AND PATINDEX('%[^a-z,0-9,@,.,_]%', REPLACE(Mail, '-', 'a')) = 0) PRIMARY KEY NOT NULL,
+	RegistrationDate DATETIME DEFAULT GETDATE() NOT NULL,
+	Note nvarchar(50) DEFAULT '' NOT NULL,
+)
+
+CREATE TABLE Staff (
+	Login nvarchar(50) CHECK (Login LIKE '[a-zA-ZА-Яа-я0-9]%') NOT NULL,
+	Password nvarchar(30) DEFAULT '' NOT NULL,
+	Rights nvarchar(30) DEFAULT '0' NOT NULL,
+	Description nvarchar(255) DEFAULT '' NOT NULL,
+)
+
+CREATE TABLE Purchase (
+	Id INT IDENTITY(1, 1) PRIMARY KEY,
+	Mail nvarchar(255) FOREIGN KEY REFERENCES Client(Mail) NOT NULL,
+	Date DATETIME DEFAULT GETDATE() NOT NULL,
+)
+
+
+CREATE TABLE Appeal (
+	Id INT IDENTITY(1, 1) PRIMARY KEY,
+	Mail nvarchar(255) FOREIGN KEY REFERENCES Client(Mail) NOT NULL,
+	Date DATETIME DEFAULT GETDATE() NOT NULL,
+	TopicOfAppeal nvarchar(30) CHECK (LEN(TopicOfAppeal) > 5) NOT NULL,
+	TextOfAppeal nvarchar(255) CHECK (LEN(TextOfAppeal) > 15) NOT NULL,
+	StatusOfAppeal1 nvarchar(20) DEFAULT 'новое' NOT NULL
+)
+
+
+CREATE TABLE Delivery (
+	Id INT IDENTITY(1, 1) PRIMARY KEY,
+	Date DATETIME DEFAULT GETDATE() NOT NULL,
+	Price DECIMAL CHECK (Price >= 0) DEFAULT 0 NOT NULL,
+	NameOfProvider NVARCHAR(50) DEFAULT '' NOT NULL,
+	ContactInformation nvarchar(255) DEFAULT '' NOT NULL,
+)
+
+
+CREATE TABLE DigitalProduct (
+	Id INT IDENTITY(1, 1) PRIMARY KEY,
+	Name NVARCHAR(50) CHECK (Name LIKE '[a-zA-ZА-Яа-я0-9]%' AND LEN(Name) > 1) UNIQUE NOT NULL,
+    Description NVARCHAR(1024) DEFAULT '' NOT NULL,
+	Price DECIMAL CHECK (Price >= 0) DEFAULT 0 NOT NULL,
+	Discount DECIMAL CHECK (Discount >= 0 AND Discount <= 100) DEFAULT 0 NOT NULL,
+)
+
+
+CREATE TABLE KeyForSale (
+	Id INT IDENTITY(1, 1) PRIMARY KEY,
+	IdOfDigitalProduct INT FOREIGN KEY REFERENCES DigitalProduct(Id) NOT NULL,
+	IdOfDelivery INT FOREIGN KEY REFERENCES Delivery(Id) NOT NULL,
+	NameOfPlatformOfKeys NVARCHAR(50) CHECK (NameOfPlatformOfKeys LIKE '[a-zA-ZА-Яа-я0-9]%' AND LEN(NameOfPlatformOfKeys) >= 2) NOT NULL,
+	ValueOfKey nvarchar(64) CHECK (LEN(ValueOfKey) >= 8) UNIQUE NOT NULL,
+)
+
+
+
+CREATE TABLE Image (
+	Id INT IDENTITY(1, 1) PRIMARY KEY,
+	IdOfDigitalProduct INT FOREIGN KEY REFERENCES DigitalProduct(Id) DEFAULT -1 NOT NULL,
+	BinaryImage VARBINARY(MAX) NOT NULL,
+)
+
+
+CREATE TABLE LinkKeyPurchase (
+	Id INT IDENTITY(1, 1) PRIMARY KEY,
+	IdOfPurchase INT FOREIGN KEY REFERENCES Purchase(Id) NOT NULL,
+	IdOfKey INT FOREIGN KEY REFERENCES KeyForSale(Id) UNIQUE NOT NULL,
+	Price DECIMAL CHECK (Price >= 0) DEFAULT 0 NOT NULL,
+	Discount DECIMAL CHECK (Discount >= 0 AND Discount <= 100) DEFAULT 0 NOT NULL,
+)
+
+
+
+
+
+
+CREATE TRIGGER InsertInLink
+ON LinkKeyPurchase
+AFTER INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE LinkKeyPurchase
+    SET Price = DigitalProduct.Price,
+        Discount = DigitalProduct.Discount
+
+    FROM KeyForSale
+    INNER JOIN DigitalProduct ON DigitalProduct.Id = KeyForSale.IdOfDigitalProduct
+	WHERE LinkKeyPurchase.IdOfKey = KeyForSale.Id
+
+END;
+
+
+
+CREATE PROCEDURE CalculateFinalPrice
+    @productId INT,
+    @finalPrice DECIMAL OUTPUT
+AS
+BEGIN
+    DECLARE @price DECIMAL;
+    DECLARE @discount DECIMAL;
+
+    SELECT @price = Price, @discount = discount
+    FROM DigitalProduct
+    WHERE id = @productId;
+
+	SET @finalPrice = @price * ((100 - @discount) / 100);
+END
