@@ -46,7 +46,7 @@ namespace KP_0_
             ["Purchase"] = new BindingSource(),
             ["Staff"] = new BindingSource(),
         };
-        internal static DataSet dataSet = new DataSet();
+        internal static DataSet dataSet;
 
 
 
