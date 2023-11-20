@@ -12,32 +12,32 @@ namespace KP_0_
             InitializeComponent();
         }
 
-        internal static LINQmethods lINQmethods = new LINQmethods();
+        internal static LINQmethods lINQmethods = new LINQmethods(); //ин!!!
         internal static Dictionary<string, DataGridView> dataGridViews;
 
-        internal static List<List<object>> linkData;
+        internal static new Dictionary<string, List<object>> linkData;
 
 
         private void QueryForm_Load(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = Tools.tabPageIndexOfQueries;
 
-
-
-            linkData = new List<List<object>>()
+            linkData = new Dictionary<string, List<object>>()
             {
-                new List<object>
+                ["0"] = new List<object>
                 {
                     "Delivery", textBox4, textBox6
                 },
+                ["1"] = new List<object>
+                {
+                    "DigitalProduct", textBox14, new TextBox()
+                },
             };
-
-
 
             dataGridViews = new Dictionary<string, DataGridView>
             {
                 ["Delivery"] = dataGridView1,
-                //["DigitalProduct"] = dataGridView2,
+                ["DigitalProduct"] = dataGridView2,
                 //["Client"] = dataGridView3,
                 //["KeyForSale"] = dataGridView4,
                 //["Purchase"] = dataGridView5,
@@ -73,10 +73,12 @@ namespace KP_0_
         {
             try
             {
-                var temp = linkData[Tools.tabPageIndexOfQueries];
+                var temp = linkData[Tools.tabPageIndexOfQueries.ToString()];
 
-                dataGridViews[temp[0].ToString()].DataSource = 
-                    lINQmethods.linqMethods[temp[0].ToString()](MainForm.bindingSources[temp[0].ToString()], ((TextBox)temp[1]).Text, ((TextBox)temp[2]).Text);
+                dataGridViews[temp[0].ToString()].DataSource =
+                    lINQmethods.linqMethods[temp[0].ToString()](MainForm.bindingSources[temp[0].ToString()],
+                    ((TextBox)temp[1]).Text,
+                    ((TextBox)temp[2]).Text);
                 dataGridViews[temp[0].ToString()].AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch { }

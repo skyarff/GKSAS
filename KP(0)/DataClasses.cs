@@ -44,6 +44,7 @@ namespace KP_0_
         {
             public int Id { get; set; }
             public string Name { get; set; }
+            public string NameOfPlatformOfKeys { get; set; }
             public string Description { get; set; }
             public decimal Price { get; set; }
             public decimal Discount { get; set; }
@@ -53,7 +54,6 @@ namespace KP_0_
             public int Id { get; set; }
             public int IdOfDigitalProduct { get; set; }
             public int IdOfDelivery { get; set; }
-            public string NameOfPlatformOfKeys { get; set; }
             public string ValueOfKey { get; set; }
         }
         internal class Image

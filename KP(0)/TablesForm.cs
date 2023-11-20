@@ -169,14 +169,15 @@ namespace KP_0_
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            OccurrenceSearch(textBox1.Text, "Delivery", "ContactInformation", dataGridView1);
+            OccurrenceSearch(textBox2.Text, "Delivery", "ContactInformation", dataGridView1);
         }
         private void button2_Click(object sender, EventArgs e)
         {
 
+
             dataGridView1.DataSource = AmongSearch(
                 AmongSearch(
-                    MainForm.dataSet.Tables[0],
+                    MainForm.dataSet.Tables["Delivery"],
                     typeof(decimal),
                     "Delivery",
                     "Price",
@@ -247,10 +248,6 @@ namespace KP_0_
 
         //KeyForSale
         #region
-        private void textBox24_TextChanged(object sender, EventArgs e)
-        {
-            OccurrenceSearch(textBox24.Text, "KeyForSale", "NameOfPlatformOfKeys", dataGridView4);
-        }
         private void textBox23_TextChanged(object sender, EventArgs e)
         {
             OccurrenceSearch(textBox23.Text, "KeyForSale", "ValueOfKey", dataGridView4);

@@ -118,9 +118,7 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
             this.bindingNavigator4 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
@@ -207,12 +205,12 @@
             this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox20 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1057,9 +1055,7 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.label23);
-            this.tabPage4.Controls.Add(this.label24);
             this.tabPage4.Controls.Add(this.textBox23);
-            this.tabPage4.Controls.Add(this.textBox24);
             this.tabPage4.Controls.Add(this.bindingNavigator4);
             this.tabPage4.Controls.Add(this.dataGridView4);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -1078,15 +1074,6 @@
             this.label23.TabIndex = 24;
             this.label23.Text = "Значение ключа";
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(22, 366);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(119, 13);
-            this.label24.TabIndex = 23;
-            this.label24.Text = "Название платформы";
-            // 
             // textBox23
             // 
             this.textBox23.Location = new System.Drawing.Point(161, 390);
@@ -1094,14 +1081,6 @@
             this.textBox23.Size = new System.Drawing.Size(329, 20);
             this.textBox23.TabIndex = 18;
             this.textBox23.TextChanged += new System.EventHandler(this.textBox23_TextChanged);
-            // 
-            // textBox24
-            // 
-            this.textBox24.Location = new System.Drawing.Point(161, 363);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(329, 20);
-            this.textBox24.TabIndex = 17;
-            this.textBox24.TextChanged += new System.EventHandler(this.textBox24_TextChanged);
             // 
             // bindingNavigator4
             // 
@@ -1923,6 +1902,23 @@
             this.tabPage7.Text = "Представление Ключ - Продукт";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(89, 392);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(66, 13);
+            this.label21.TabIndex = 45;
+            this.label21.Text = "Id доставки";
+            // 
+            // textBox20
+            // 
+            this.textBox20.Location = new System.Drawing.Point(161, 389);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(275, 20);
+            this.textBox20.TabIndex = 44;
+            this.textBox20.TextChanged += new System.EventHandler(this.textBox20_TextChanged);
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -1958,23 +1954,6 @@
             this.button5.Text = "Перезагрузить";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(89, 392);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(66, 13);
-            this.label21.TabIndex = 45;
-            this.label21.Text = "Id доставки";
-            // 
-            // textBox20
-            // 
-            this.textBox20.Location = new System.Drawing.Point(161, 389);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(275, 20);
-            this.textBox20.TabIndex = 44;
-            this.textBox20.TextChanged += new System.EventHandler(this.textBox20_TextChanged);
             // 
             // TablesForm
             // 
@@ -2137,9 +2116,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
         private System.Windows.Forms.BindingNavigator bindingNavigator4;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
