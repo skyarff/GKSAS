@@ -25,7 +25,6 @@ namespace KP_0_
         {
             tabControl1.SelectedIndex = Tools.tabPageIndexOfTables;
 
-
             dataGridViews = new Dictionary<string, DataGridView>
             {
                 ["Delivery"] = dataGridView1,
@@ -345,6 +344,11 @@ namespace KP_0_
         {
             Process.Start(Process.GetCurrentProcess().MainModule.FileName);
             Environment.Exit(0);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

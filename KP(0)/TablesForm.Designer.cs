@@ -212,6 +212,7 @@
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -296,7 +297,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(614, 481);
+            this.button1.Location = new System.Drawing.Point(496, 481);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 23);
             this.button1.TabIndex = 2;
@@ -598,7 +599,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1033, 443);
+            this.tabPage2.Size = new System.Drawing.Size(1033, 449);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Цифровой товар";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -849,7 +850,7 @@
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1033, 443);
+            this.tabPage3.Size = new System.Drawing.Size(1033, 449);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Клиент";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1061,7 +1062,7 @@
             this.tabPage4.Controls.Add(this.dataGridView4);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1033, 443);
+            this.tabPage4.Size = new System.Drawing.Size(1033, 449);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Ключ";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1220,7 +1221,7 @@
             this.tabPage5.Controls.Add(this.dataGridView5);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1033, 443);
+            this.tabPage5.Size = new System.Drawing.Size(1033, 449);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Заказ";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1432,7 +1433,7 @@
             this.tabPage6.Controls.Add(this.dataGridView6);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1033, 443);
+            this.tabPage6.Size = new System.Drawing.Size(1033, 449);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Обращение";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1670,7 +1671,7 @@
             this.tabPage8.Controls.Add(this.dataGridView8);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1033, 443);
+            this.tabPage8.Size = new System.Drawing.Size(1033, 449);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Связь ключ заказ";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1898,7 +1899,7 @@
             this.tabPage7.Controls.Add(this.dataGridView7);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1033, 443);
+            this.tabPage7.Size = new System.Drawing.Size(1033, 449);
             this.tabPage7.TabIndex = 8;
             this.tabPage7.Text = "Представление Ключ - Продукт";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1948,7 +1949,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(733, 481);
+            this.button5.Location = new System.Drawing.Point(615, 481);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(113, 23);
             this.button5.TabIndex = 4;
@@ -1966,11 +1967,22 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(734, 481);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(113, 23);
+            this.button10.TabIndex = 6;
+            this.button10.Text = "Закрыть";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // TablesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 516);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.tabControl1);
@@ -2219,5 +2231,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button10;
     }
 }

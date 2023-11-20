@@ -106,17 +106,6 @@ namespace KP_0_
 
         }
 
-        private void таблицыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            (new Thread(() =>
-            {
-                TablesForm tablesForm = new TablesForm();
-                tablesForm.ShowDialog();
-            })).Start();
- 
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             Process.Start(Process.GetCurrentProcess().MainModule.FileName);
@@ -137,6 +126,16 @@ namespace KP_0_
             })).Start();
         }
 
+
+        private void таблицыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new Thread(() =>
+            {
+                TablesForm tablesForm = new TablesForm();
+                tablesForm.ShowDialog();
+            })).Start();
+
+        }
         private void запросыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             (new Thread(() =>

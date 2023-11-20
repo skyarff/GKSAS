@@ -103,5 +103,10 @@ namespace KP_0_
             Process.Start(Process.GetCurrentProcess().MainModule.FileName);
             Environment.Exit(0);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
