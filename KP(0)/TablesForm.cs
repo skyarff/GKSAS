@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
@@ -340,5 +341,10 @@ namespace KP_0_
 
         #endregion
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Process.Start(Process.GetCurrentProcess().MainModule.FileName);
+            Environment.Exit(0);
+        }
     }
 }

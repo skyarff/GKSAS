@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -32,15 +33,28 @@ namespace KP_0_
                 {
                     "DigitalProduct", textBox14, new TextBox()
                 },
+                ["2"] = new List<object>
+                {
+                    "Client", textBox21, new TextBox()
+                },
+                ["3"] = new List<object>
+                {
+                    "Purchase", textBox25, textBox23
+                },
+                ["4"] = new List<object>
+                {
+                    "Appeal", textBox1, new TextBox()
+                },
             };
 
             dataGridViews = new Dictionary<string, DataGridView>
             {
                 ["Delivery"] = dataGridView1,
                 ["DigitalProduct"] = dataGridView2,
-                //["Client"] = dataGridView3,
-                //["KeyForSale"] = dataGridView4,
-                //["Purchase"] = dataGridView5,
+                ["Client"] = dataGridView3,
+                ["Purchase"] = dataGridView4,
+                ["Appeal"] = dataGridView5,
+
             };
 
 
@@ -77,11 +91,17 @@ namespace KP_0_
 
                 dataGridViews[temp[0].ToString()].DataSource =
                     lINQmethods.linqMethods[temp[0].ToString()](MainForm.bindingSources[temp[0].ToString()],
-                    ((TextBox)temp[1]).Text,
-                    ((TextBox)temp[2]).Text);
+                    temp[1],
+                    temp[2]);
                 dataGridViews[temp[0].ToString()].AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch { }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Process.Start(Process.GetCurrentProcess().MainModule.FileName);
+            Environment.Exit(0);
         }
     }
 }

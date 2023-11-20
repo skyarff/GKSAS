@@ -33,11 +33,11 @@
             this.запросыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.процедурыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.представленияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.представленияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,11 @@
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.отчетыToolStripMenuItem.Text = "Отчеты";
             // 
+            // представленияToolStripMenuItem
+            // 
+            this.представленияToolStripMenuItem.Name = "представленияToolStripMenuItem";
+            this.представленияToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(131, 50);
@@ -101,20 +106,20 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(696, 359);
+            this.button1.Location = new System.Drawing.Point(608, 359);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 23);
+            this.button1.Size = new System.Drawing.Size(181, 23);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Перезагрузить";
+            this.button1.Text = "Перезагрузить приложение";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // textBox2
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(131, 364);
+            this.textBox2.Location = new System.Drawing.Point(201, 364);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(559, 13);
+            this.textBox2.Size = new System.Drawing.Size(401, 13);
             this.textBox2.TabIndex = 4;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

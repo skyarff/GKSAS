@@ -30,7 +30,7 @@ namespace KP_0_
             public DateTime Date { get; set; }
             public string TopicOfAppeal { get; set; }
             public string TextOfAppeal { get; set; }
-            public string StatusOfAppeal1 { get; set; }
+            public string StatusOfAppeal { get; set; }
         }
         internal class Delivery
         {
