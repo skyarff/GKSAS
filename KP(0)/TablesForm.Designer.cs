@@ -1901,17 +1901,17 @@
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Size = new System.Drawing.Size(1033, 449);
             this.tabPage7.TabIndex = 8;
-            this.tabPage7.Text = "Представление Ключ - Продукт";
+            this.tabPage7.Text = "Представление Связь - Ключ - Продукт";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(678, 414);
+            this.label21.Location = new System.Drawing.Point(599, 414);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(66, 13);
+            this.label21.Size = new System.Drawing.Size(145, 13);
             this.label21.TabIndex = 45;
-            this.label21.Text = "Id доставки";
+            this.label21.Text = "Наименование платформы";
             // 
             // textBox20
             // 
@@ -1924,11 +1924,11 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(694, 388);
+            this.label20.Location = new System.Drawing.Point(633, 388);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(50, 13);
+            this.label20.Size = new System.Drawing.Size(111, 13);
             this.label20.TabIndex = 43;
-            this.label20.Text = "Id ключа";
+            this.label20.Text = "Наименование игры";
             // 
             // textBox19
             // 

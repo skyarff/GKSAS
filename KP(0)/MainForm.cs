@@ -30,7 +30,7 @@ namespace KP_0_
             "LinkKeyPurchase",
             "Purchase",
             "Staff",
-            "ViewKeyProduct"
+            "ViewLinkKeyProduct"
         };
         internal static Dictionary<string, SqlDataAdapter> sqlDataAdapters = new Dictionary<string, SqlDataAdapter>();
         internal static Dictionary<string, BindingSource> bindingSources = new Dictionary<string, BindingSource>();
