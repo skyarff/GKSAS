@@ -32,7 +32,6 @@
             this.таблицыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.запросыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.процедурыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.представленияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@
             this.таблицыToolStripMenuItem,
             this.запросыToolStripMenuItem,
             this.процедурыToolStripMenuItem,
-            this.отчетыToolStripMenuItem,
             this.представленияToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -75,12 +73,6 @@
             this.процедурыToolStripMenuItem.Size = new System.Drawing.Size(209, 20);
             this.процедурыToolStripMenuItem.Text = "Процедуры и администрирование";
             this.процедурыToolStripMenuItem.Click += new System.EventHandler(this.процедурыToolStripMenuItem_Click);
-            // 
-            // отчетыToolStripMenuItem
-            // 
-            this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
-            this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.отчетыToolStripMenuItem.Text = "Отчеты";
             // 
             // представленияToolStripMenuItem
             // 
@@ -155,7 +147,6 @@
         private System.Windows.Forms.ToolStripMenuItem таблицыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem запросыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem процедурыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;

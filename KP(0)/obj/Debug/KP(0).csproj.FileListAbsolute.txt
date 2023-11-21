@@ -12,3 +12,17 @@ C:\Users\bffus\OneDrive\Рабочий стол\KP(0)\KP(0)\obj\Debug\KP_0_.Main
 C:\Users\bffus\OneDrive\Рабочий стол\KP(0)\KP(0)\obj\Debug\KP_0_.TablesForm.resources
 C:\Users\bffus\OneDrive\Рабочий стол\KP(0)\KP(0)\obj\Debug\KP_0_.ProceduresForm.resources
 C:\Users\bffus\OneDrive\Рабочий стол\KP(0)\KP(0)\obj\Debug\KP_0_.QueryForm.resources
+C:\Users\bffus\OneDrive\Рабочий стол\GKSAS\KP(0)\bin\Debug\KP(0).exe.config
+C:\Users\bffus\OneDrive\Рабочий стол\GKSAS\KP(0)\bin\Debug\KP(0).exe
+C:\Users\bffus\OneDrive\Рабочий стол\GKSAS\KP(0)\bin\Debug\KP(0).pdb
+C:\Users\bffus\OneDrive\Рабочий стол\GKSAS\KP(0)\obj\Debug\KP(0).csproj.AssemblyReference.cache
+C:\Users\bffus\OneDrive\Рабочий стол\GKSAS\KP(0)\obj\Debug\KP(0).csproj.SuggestedBindingRedirects.cache
+C:\Users\bffus\OneDrive\Рабочий стол\GKSAS\KP(0)\obj\Debug\KP_0_.MainForm.resources
+C:\Users\bffus\OneDrive\Рабочий стол\GKSAS\KP(0)\obj\Debug\KP_0_.ProceduresForm.resources
+C:\Users\bffus\OneDrive\Рабочий стол\GKSAS\KP(0)\obj\Debug\KP_0_.Properties.Resources.resources
+C:\Users\bffus\OneDrive\Рабочий стол\GKSAS\KP(0)\obj\Debug\KP_0_.QueryForm.resources
+C:\Users\bffus\OneDrive\Рабочий стол\GKSAS\KP(0)\obj\Debug\KP_0_.TablesForm.resources
+C:\Users\bffus\OneDrive\Рабочий стол\GKSAS\KP(0)\obj\Debug\KP(0).csproj.GenerateResource.cache
+C:\Users\bffus\OneDrive\Рабочий стол\GKSAS\KP(0)\obj\Debug\KP(0).csproj.CoreCompileInputs.cache
+C:\Users\bffus\OneDrive\Рабочий стол\GKSAS\KP(0)\obj\Debug\KP(0).exe
+C:\Users\bffus\OneDrive\Рабочий стол\GKSAS\KP(0)\obj\Debug\KP(0).pdb

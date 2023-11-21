@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
+using static KP_0_.DataClasses;
 
 namespace KP_0_
 {
@@ -35,6 +36,7 @@ namespace KP_0_
                 ["Appeal"] = dataGridView6,
                 ["LinkKeyPurchase"] = dataGridView8,
                 ["ViewLinkKeyProduct"] = dataGridView7,
+                ["Staff"] = dataGridView9,
             };
             bindingNavigators = new Dictionary<string, BindingNavigator>
             {
@@ -46,6 +48,7 @@ namespace KP_0_
                 ["Purchase"] = bindingNavigator5,
                 ["Appeal"] = bindingNavigator6,
                 ["LinkKeyPurchase"] = bindingNavigator8,
+                ["Staff"] = bindingNavigator7,
             };
 
 
@@ -58,8 +61,15 @@ namespace KP_0_
                 if (bindingNavigators.ContainsKey(item))
                     bindingNavigators[item].BindingSource = MainForm.bindingSources[item];
 
-                if (item != "Client")
-                    dataGridViews[item].Columns[0].ReadOnly = true;
+
+                string[] EditableKeys = { "Client", "Staff" };
+
+
+                bool flag = true;
+                for (int i = 0; i < EditableKeys.Length; i++)
+                    if (item == EditableKeys[i]) flag = false;
+                if (flag) dataGridViews[item].Columns[0].ReadOnly = true;
+
 
                 dataGridViews[item].AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
@@ -326,6 +336,22 @@ namespace KP_0_
 
         #endregion
 
+        //Staff
+        #region
+        private void textBox29_TextChanged(object sender, EventArgs e)
+        {
+            OccurrenceSearch(textBox29.Text, "Staff", "Login", dataGridView9);
+        }
+        private void textBox26_TextChanged(object sender, EventArgs e)
+        {
+            OccurrenceSearch(textBox26.Text, "Staff", "Rights", dataGridView9);
+        }
+        private void textBox21_TextChanged(object sender, EventArgs e)
+        {
+            OccurrenceSearch(textBox21.Text, "Staff", "Description", dataGridView9);
+        }
+        #endregion
+
 
         //ViewLinkKeyProduct
         #region
@@ -350,5 +376,8 @@ namespace KP_0_
         {
             this.Close();
         }
+
+
+        
     }
 }
