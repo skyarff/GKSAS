@@ -72,8 +72,8 @@
             // процедурыToolStripMenuItem
             // 
             this.процедурыToolStripMenuItem.Name = "процедурыToolStripMenuItem";
-            this.процедурыToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
-            this.процедурыToolStripMenuItem.Text = "Процедуры";
+            this.процедурыToolStripMenuItem.Size = new System.Drawing.Size(209, 20);
+            this.процедурыToolStripMenuItem.Text = "Процедуры и администрирование";
             this.процедурыToolStripMenuItem.Click += new System.EventHandler(this.процедурыToolStripMenuItem_Click);
             // 
             // отчетыToolStripMenuItem
