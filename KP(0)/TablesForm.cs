@@ -36,7 +36,6 @@ namespace KP_0_
                 ["Appeal"] = dataGridView6,
                 ["LinkKeyPurchase"] = dataGridView8,
                 ["ViewLinkKeyProduct"] = dataGridView7,
-                ["Staff"] = dataGridView9,
             };
             bindingNavigators = new Dictionary<string, BindingNavigator>
             {
@@ -48,7 +47,6 @@ namespace KP_0_
                 ["Purchase"] = bindingNavigator5,
                 ["Appeal"] = bindingNavigator6,
                 ["LinkKeyPurchase"] = bindingNavigator8,
-                ["Staff"] = bindingNavigator7,
             };
 
 
@@ -336,23 +334,7 @@ namespace KP_0_
 
         #endregion
 
-        //Staff
-        #region
-        private void textBox29_TextChanged(object sender, EventArgs e)
-        {
-            OccurrenceSearch(textBox29.Text, "Staff", "Login", dataGridView9);
-        }
-        private void textBox26_TextChanged(object sender, EventArgs e)
-        {
-            OccurrenceSearch(textBox26.Text, "Staff", "Rights", dataGridView9);
-        }
-        private void textBox21_TextChanged(object sender, EventArgs e)
-        {
-            OccurrenceSearch(textBox21.Text, "Staff", "Description", dataGridView9);
-        }
-        #endregion
-
-
+       
         //ViewLinkKeyProduct
         #region
         private void textBox19_TextChanged(object sender, EventArgs e)
