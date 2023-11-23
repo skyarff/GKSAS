@@ -147,13 +147,12 @@ FROM KeyForSale INNER JOIN DigitalProduct ON KeyForSale.IdOfDigitalProduct = Dig
 --END
 
 
-CREATE PROCEDURE AddUser @login NVARCHAR(50), @password NVARCHAR(50)
+CREATE PROCEDURE [dbo].[AddUser] @login NVARCHAR(50), @password NVARCHAR(50)
  AS 
  DECLARE @CurrentDatabaseName NVARCHAR(128);
     SET @CurrentDatabaseName = DB_NAME();
-exec sp_addlogin @login, @password,  @CurrentDatabaseName
-exec sp_adduser @login, @password 
-GO
+exec sp_addlogin @login, @password, @CurrentDatabaseName
+exec sp_adduser @login, @login 
 
 CREATE PROCEDURE GrantUser @command NVARCHAR(250) 
  AS 

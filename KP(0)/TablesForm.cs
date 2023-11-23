@@ -6,7 +6,6 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
-using static KP_0_.DataClasses;
 
 namespace KP_0_
 {

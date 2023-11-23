@@ -16,8 +16,6 @@ namespace KP_0_
         }
 
 
-
-
         internal static SqlConnection sqlConnection = null;
         internal static List<string> tableNames = new List<string>()
         {
