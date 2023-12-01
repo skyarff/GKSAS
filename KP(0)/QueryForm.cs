@@ -13,7 +13,7 @@ namespace KP_0_
             InitializeComponent();
         }
 
-        internal static LINQmethods lINQmethods = new LINQmethods(); //ин!!!
+        internal static LINQmethods lINQmethods = new LINQmethods();
         internal static Dictionary<string, DataGridView> dataGridViews;
 
         internal static new Dictionary<string, List<object>> linkData;
@@ -57,23 +57,13 @@ namespace KP_0_
 
             };
 
-
-
-
-
-            //----------------
-            //BindingSource newBindingSource = new BindingSource();
-            //newBindingSource.DataSource = MainForm.bindingSources["Delivery"].DataSource;
-            //newBindingSource.DataMember = MainForm.bindingSources["Delivery"].DataMember;
-
-
         }
+
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Tools.tabPageIndexOfQueries = tabControl1.SelectedIndex;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             QueryForm queryForm = new QueryForm();
@@ -81,8 +71,6 @@ namespace KP_0_
 
             (new Thread(() => queryForm.ShowDialog())).Start();
         }
-
-
         private void button7_Click(object sender, EventArgs e)
         {
             try
@@ -97,13 +85,11 @@ namespace KP_0_
             }
             catch { }
         }
-
         private void button8_Click(object sender, EventArgs e)
         {
             Process.Start(Process.GetCurrentProcess().MainModule.FileName);
             Environment.Exit(0);
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();

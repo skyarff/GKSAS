@@ -15,10 +15,6 @@ namespace KP_0_
         internal Dictionary<string, LINQ> linqMethods = new Dictionary<string, LINQ>();
 
 
-
-
-
-
         public LINQmethods()
         {
             linqMethods.Add("Delivery" ,(bindingSource, args) =>

@@ -52,7 +52,7 @@ namespace KP_0_
             foreach (var item in dataGridViews.Keys)
             {
 
-                dataGridViews[item].DataError += YourDataGridView_DataError;
+                dataGridViews[item].DataError += MyDataGridView_DataError;
                 dataGridViews[item].DataSource = MainForm.bindingSources[item];
 
                 if (bindingNavigators.ContainsKey(item))
@@ -73,7 +73,7 @@ namespace KP_0_
 
         }
 
-        private void YourDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e) { }
+        private void MyDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e) { }
         private DataTable AmongSearch(DataTable dataTable, Type type, string table, string column, string p1 = "", string p2 = "")
         {
 
@@ -357,8 +357,5 @@ namespace KP_0_
         {
             this.Close();
         }
-
-
-        
     }
 }

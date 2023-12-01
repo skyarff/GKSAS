@@ -71,16 +71,4 @@ namespace KP_0_
             public decimal Discount { get; set; }
         }
     }
-
-    //var result = newBindingSource.Cast<DataRowView>()
-    //                 .Where(row => (decimal)row["Price"] > 7000)
-    //                 .Select(row => new
-    //                 {
-    //                     Id = (int)row["Id"],
-    //                     Date = (DateTime)row["Date"],
-    //                     Price = (decimal)row["Price"],
-    //                     NameOfProvider = (string)row["NameOfProvider"],
-    //                     ContactInformation = (string)row["ContactInformation"],
-    //                 })
-    //                 .ToList();
 }

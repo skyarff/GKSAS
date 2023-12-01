@@ -34,16 +34,12 @@ namespace KP_0_
         internal static DataSet dataSet;
 
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
-
             for (int i = 0; i < Tools.configValues.Length; i++) Tools.ConfigRead(i.ToString());
-
 
             textBox1.Text = Tools.configValues[0];
             textBox2.ReadOnly = true;
-
 
             try
             {
@@ -61,7 +57,6 @@ namespace KP_0_
                 menuStrip1.Enabled = false;
                 textBox2.Text = "Ошибка, не удалось установить соединение.";
             }
-
 
 
             if (menuStrip1.Enabled)
@@ -84,23 +79,6 @@ namespace KP_0_
                     MainForm.bindingSources[tableNames[i]].DataMember = tableNames[i];
                 }
             }
-
-
-
-
-
-
-            
-
-
-
-
-
-
-           
-
-
-
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -108,7 +86,6 @@ namespace KP_0_
             Process.Start(Process.GetCurrentProcess().MainModule.FileName);
             Environment.Exit(0);
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             Tools.ConfigAdd("0", textBox1.Text);
@@ -122,8 +99,6 @@ namespace KP_0_
                 proceduresForm.ShowDialog();
             })).Start();
         }
-
-
         private void таблицыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             (new Thread(() =>

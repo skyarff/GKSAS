@@ -26,12 +26,7 @@ namespace KP_0_
             }
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
-
-
-
-
         }
-
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,15 +65,11 @@ namespace KP_0_
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
-
                     SqlParameter inputParameter1 = new SqlParameter("@login", SqlDbType.NVarChar, 50);
                     inputParameter1.Direction = ParameterDirection.Input;
 
-
                     SqlParameter inputParameter2 = new SqlParameter("@password", SqlDbType.NVarChar, 50);
                     inputParameter2.Direction = ParameterDirection.Input;
-
-
 
                     command.Parameters.AddWithValue("@login", textBox3.Text);
                     command.Parameters.AddWithValue("@password", textBox4.Text);
@@ -96,7 +87,7 @@ namespace KP_0_
 
         private void button3_Click(object sender, EventArgs e)
         {
-            try //GrantUser @command REVOKE SELECT ON [схема].[таблица] FROM [имя_пользователя];
+            try
             {
                 using (SqlCommand command = new SqlCommand("GrantUser", MainForm.sqlConnection))
                 {
@@ -162,7 +153,7 @@ namespace KP_0_
 
         private void button6_Click(object sender, EventArgs e)
         {
-            try //GrantUser @command REVOKE SELECT ON [схема].[таблица] FROM [имя_пользователя];
+            try
             {
                 using (SqlCommand command = new SqlCommand("GrantUser", MainForm.sqlConnection))
                 {
